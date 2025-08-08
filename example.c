@@ -10,6 +10,7 @@ int main(void)
 
     int r_1 = rand() % range; // [0, range);
     int r_2 = rand() % range - 10; // [-10, range);
+    int r_3 = rand() + rand(); // если нужен больший диапазон
 
     printf("%d, %d, %d, %d, %d\n", r_1, r_2, rand(), rand(), rand());
 
