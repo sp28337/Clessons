@@ -6,10 +6,12 @@ int main(void)
 {
     srand(time(NULL));
 
-    int r_1 = rand();
+    int range = 10;
+
+    int r_1 = rand() % range; // [0, range]
     int r_2 = rand();
 
     printf("%d, %d, %d, %d, %d\n", r_1, r_2, rand(), rand(), rand());
-    
+
     return 0;
 }
