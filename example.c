@@ -1,9 +1,12 @@
 #include <stdio.h>
-#define TEXT(A, B) "Square of rectangle (" #A ") x (" #B ")\n"
+#define X_N(N) x ## N
+#define print(a,b,c) printf("%d", a##b##c);
 
 int main(void) 
 {
-    printf(TEXT(x-2, y-3));
+    int x1 = 1, x2 = -2, x4 = 10;
+    printf("%d\n", X_N(4));
+    print(19, 10, 1994);
 
     return 0;
 }
