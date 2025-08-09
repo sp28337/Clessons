@@ -1,13 +1,9 @@
 #include <stdio.h>
-#define SQ_PR(A, B) ((A) * (B))
+#define TEXT(A, B) "Square of rectangle (" #A ") x (" #B ")\n"
 
 int main(void) 
 {
-    int x = 1;
-    int y = 2;
-    int res = SQ_PR(x+2, y-3);
-
-    printf("res = %d\n", res);
+    printf(TEXT(x-2, y-3));
 
     return 0;
 }
