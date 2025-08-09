@@ -1,28 +1,23 @@
 #include <stdio.h>
-#include <math.h>
+#define FIVE 5
+#define TEN 2 * FIVE
+#undef TEN
+#define TEN 10
+#define TEXT "Hello, Pattaya!"
+#define TEXT2 "Text message \
+in one line"
+#define PRINT_D printf("digit = %d\n", digit)
+#define FORMAT "digit = %d\n"
 
 int main(void) 
 {
-    double a, b, c;
-    double D, x1, x2;
+    int digit = FIVE;
+    PRINT_D;
 
-    if(scanf("%lf, %lf, %lf", &a, &b, &c) != 3) {
-        printf("Error input\n");
-        return 0;
-    }
+    digit = TEN;
+    printf(FORMAT, digit);
+    printf(TEXT "\n");
+    printf(TEXT2 "\n");
 
-    D = b*b - 4*a*c;
-
-    if(D < 0) {
-        printf("D = %.2f < 0\n", D);
-        return 0;
-    }
-
-    D = sqrt(D);
-
-    x1 = -(b + D) / (2.0 * a);
-    x2 = -(b - D) / (2.0 * a);
-
-    printf("x1 = %.2f, x2 = %.2f\n", x1, x2);
     return 0;
 }
