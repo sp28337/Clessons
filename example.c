@@ -1,28 +1,12 @@
 #include <stdio.h>
-#include <math.h>
+#define X_N(N) x ## N
+#define print(a,b,c) printf("%d", a##b##c);
 
 int main(void) 
 {
-    double a, b, c;
-    double D, x1, x2;
+    int x1 = 1, x2 = -2, x4 = 10;
+    printf("%d\n", X_N(4));
+    print(19, 10, 1994);
 
-    if(scanf("%lf, %lf, %lf", &a, &b, &c) != 3) {
-        printf("Error input\n");
-        return 0;
-    }
-
-    D = b*b - 4*a*c;
-
-    if(D < 0) {
-        printf("D = %.2f < 0\n", D);
-        return 0;
-    }
-
-    D = sqrt(D);
-
-    x1 = -(b + D) / (2.0 * a);
-    x2 = -(b - D) / (2.0 * a);
-
-    printf("x1 = %.2f, x2 = %.2f\n", x1, x2);
     return 0;
 }
