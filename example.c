@@ -1,23 +1,13 @@
 #include <stdio.h>
-#define FIVE 5
-#define TEN 2 * FIVE
-#undef TEN
-#define TEN 10
-#define TEXT "Hello, Pattaya!"
-#define TEXT2 "Text message \
-in one line"
-#define PRINT_D printf("digit = %d\n", digit)
-#define FORMAT "digit = %d\n"
+#define SQ_PR(A, B) ((A) * (B))
 
 int main(void) 
 {
-    int digit = FIVE;
-    PRINT_D;
+    int x = 1;
+    int y = 2;
+    int res = SQ_PR(x+2, y-3);
 
-    digit = TEN;
-    printf(FORMAT, digit);
-    printf(TEXT "\n");
-    printf(TEXT2 "\n");
+    printf("res = %d\n", res);
 
     return 0;
 }
