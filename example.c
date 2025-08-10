@@ -1,19 +1,15 @@
-# define LANG_C
+#include <stdio.h>
 
-# if defined(LANG_C)
-#   include <stdio.h>
-# else
-#   include <iostream>
-# endif
-
+int n = 5;
+int p = 1;
 
 int main(void)
 {
-    int x = 5;
-#ifdef LANG_C
-    printf("%d\n", x);
-#else
-    std::cout << x << std::endl;
-#endif
+    for(int i = 1; i <= n; ++i)
+    {
+        p = p * i;
+    }
+
+    printf("p = %d", p);
     return 0;
 }
