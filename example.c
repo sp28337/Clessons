@@ -1,15 +1,17 @@
 #include <stdio.h>
 
-int n = 5;
-int p = 1;
-
 int main(void)
 {
-    for(int i = 1; i <= n; ++i)
-    {
-        p = p * i;
-    }
+    int pass_code = 17;
+    int entered_code;
 
-    printf("p = %d", p);
+    do {
+        printf("Enter the code: ");
+        scanf("%d", &entered_code);
+        printf("The code is not correct, try again!\n");
+    } while (entered_code != pass_code);
+    
+    printf("Welcome!\n");
+
     return 0;
 }
