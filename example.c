@@ -2,16 +2,14 @@
 
 int main(void)
 {
-    int pass_code = 17;
-    int entered_code;
+    int sum = 0;
 
-    do {
-        printf("Enter the code: ");
-        scanf("%d", &entered_code);
-        printf("The code is not correct, try again!\n");
-    } while (entered_code != pass_code);
-    
-    printf("Welcome!\n");
+    for(int i = -3; i <= 7; ++i)
+        for(int j = 1; j <= 5; ++j)
+            for(int k = 2; k <= 4; ++k)
+                sum += (i + j - k) * (i + j - k);
+     
+    printf("sum = %d\n", sum);
 
     return 0;
 }
