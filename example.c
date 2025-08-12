@@ -2,14 +2,14 @@
 
 int main(void)
 {
-    int sum = 0;
+    char d = 10;
+    char *gpt = &d;
 
-    for(int i = -3; i <= 7; ++i)
-        for(int j = 1; j <= 5; ++j)
-            for(int k = 2; k <= 4; ++k)
-                sum += (i + j - k) * (i + j - k);
-     
-    printf("sum = %d\n", sum);
+    printf("addres = %p\nd = %d\ngpt = %d", gpt, *gpt, d);
+
+    *gpt = 100;
+    
+    printf("\naddres = %p\nd = %d\ngpt = %d", gpt, *gpt, d);
 
     return 0;
 }
