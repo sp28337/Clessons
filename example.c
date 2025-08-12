@@ -1,19 +1,15 @@
-# define LANG_C
-
-# if defined(LANG_C)
-#   include <stdio.h>
-# else
-#   include <iostream>
-# endif
-
+#include <stdio.h>
 
 int main(void)
 {
-    int x = 5;
-#ifdef LANG_C
-    printf("%d\n", x);
-#else
-    std::cout << x << std::endl;
-#endif
+    int sum = 0;
+
+    for(int i = -3; i <= 7; ++i)
+        for(int j = 1; j <= 5; ++j)
+            for(int k = 2; k <= 4; ++k)
+                sum += (i + j - k) * (i + j - k);
+     
+    printf("sum = %d\n", sum);
+
     return 0;
 }
