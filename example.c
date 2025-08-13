@@ -1,25 +1,32 @@
 #include <stdio.h>
 
-#define TOTAL_MARKS 13
+#define TOTAL_MARKS 15
+#define SECOND_ARRAY 10
 
 int main(void)
 {
-    int marks[TOTAL_MARKS];
-
-    marks[0] = 2 * 3;
-    marks[2] = 4;
-    marks[12] = 7 - 2;
-
-    size_t bytes_marks = sizeof(marks);
-    
-    // size_t size_marks = sizeof(marks)/ sizeof(marks[0]);
-    //                   =
-    size_t size_marks = sizeof(marks)/ sizeof(*marks);
-
-    printf("size of marks - %zu\n\n", size_marks);
+    int marks[TOTAL_MARKS] = {1, 2, 3, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0};
+    int array[SECOND_ARRAY] = {1, 2, 3};
+    int coords[] = {11, 12, 13};
+    int digits[10] = {11, [5] = -7, 12, [9] = 100};
 
     for(int i = 0; i < TOTAL_MARKS; ++i)
-        printf("[%d] - %d\n", i, marks[i]);
+        printf("%d ", marks[i]);
+
+    printf("\n");
+
+    for(int i = 0; i < SECOND_ARRAY; ++i)
+        printf("%d ", array[i]);
+
+    printf("\n");
+
+    for(int i = 0; sizeof(coords) / sizeof(coords[0]) > i; ++i)
+        printf("%d ", array[i]);
+
+    printf("\n");
+
+    for(int i = 0; sizeof(digits) / sizeof(digits[0]) > i; ++i)
+        printf("%d ", digits[i]);
 
     return 0;
 }
