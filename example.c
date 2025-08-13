@@ -1,24 +1,30 @@
 #include <stdio.h>
 
-#define SIZE_BUFFER 1024
+#define TOTAL_MARKS 13
 
 int main(void)
 {
-    // correct array declaration
-    double f[30];
-    char buffer[SIZE_BUFFER];
-    int marks[13];
-    short arr[3 * 8];
-    char bytes[sizeof(double)];
+    int marks[TOTAL_MARKS];
 
-    // sizeof() - is not a function, it is an operator that returns the size of a type or object
+    // writing to the array
+    marks[0] = 1001;
+    marks[2] = 4;
+    marks[3] = 5 * 5;
+    marks[12] = 6 - 1;
 
-    // incorrect array declaration
-    int n = 5;
+    // reading from the array
+    int x = marks[0];
+    int y = marks[12];
+    int b = marks[3];
 
-    int arr[n]; // correct in c99, not recommended due to possible incompatibility with other compilers
-    float func[21.5];
-    int null_arr[0];
+    printf("x = %d\n", x);
+    printf("y = %d\n", y);
+    printf("b = %d\n\n", b);
+
+    for(int i = 0; i < TOTAL_MARKS; ++i)
+    {
+        printf("%d) %d\n", i, marks[i]);
+    }
 
     return 0;
 }
