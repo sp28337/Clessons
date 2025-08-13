@@ -2,14 +2,11 @@
 
 int main(void)
 {
-    char d = 10;
-    char *gpt = &d;
+    int g = 476789;
+    char *ptr = (char*)&g;
 
-    printf("addres = %p\nd = %d\ngpt = %d", gpt, *gpt, d);
-
-    *gpt = 100;
-    
-    printf("\naddres = %p\nd = %d\ngpt = %d", gpt, *gpt, d);
+    for(int i = 0; i < sizeof(int); ++i)
+        printf("%d ", *ptr++);
 
     return 0;
 }
