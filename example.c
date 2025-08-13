@@ -11,7 +11,12 @@ int main(void)
     marks[12] = 7 - 2;
 
     size_t bytes_marks = sizeof(marks);
-    printf("sizeof(marks) = %zu bytes\n\n", bytes_marks);
+    
+    // size_t size_marks = sizeof(marks)/ sizeof(marks[0]);
+    //                   =
+    size_t size_marks = sizeof(marks)/ sizeof(*marks);
+
+    printf("size of marks - %zu\n\n", size_marks);
 
     for(int i = 0; i < TOTAL_MARKS; ++i)
         printf("[%d] - %d\n", i, marks[i]);
