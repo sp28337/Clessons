@@ -4,15 +4,17 @@
 
 int main(void)
 {
-    int arr[SIZE_ARRAY] = {2, 8, 7};
-    int insert_index = 2;
+    int arr[SIZE_ARRAY] = {2, 8, 3, 3, 7, 9, 1, 2};
+    int delete_index = 5;
 
-    for(int i = SIZE_ARRAY - 1; i > insert_index; --i) {
-        arr[i] = arr[i - 1];
-        // printf("arr[%d] = arr[%d]\n", i, i - 1);
-    }
+    for(int i = 0; i < SIZE_ARRAY; ++i)
+        printf("%d ", arr[i]);
 
-    arr[insert_index] = 33;
+
+    printf("\n");
+    for(int i = delete_index; i < SIZE_ARRAY - 1; ++i)
+        arr[i] = arr[i + 1];
+
 
     for(int i = 0; i < SIZE_ARRAY; ++i)
         printf("%d ", arr[i]);
