@@ -1,32 +1,19 @@
 #include <stdio.h>
 
-#define TOTAL_MARKS 15
-#define SECOND_ARRAY 10
-
 int main(void)
 {
-    int marks[TOTAL_MARKS] = {1, 2, 3, 4, 5, 0, 0, 0, 0, 0, 0, 0, 0};
-    int array[SECOND_ARRAY] = {1, 2, 3};
-    int coords[] = {11, 12, 13};
-    int digits[10] = {11, [5] = -7, 12, [9] = 100};
+    int ptr_array[10] = {1, 2, 3, 4, 5, 6, 7};
+    int val = *(ptr_array + 1);
+    printf("%d", val);
 
-    for(int i = 0; i < TOTAL_MARKS; ++i)
-        printf("%d ", marks[i]);
+    short arr[] = {4, 3, 2, 1, 5, 6, 7};
 
-    printf("\n");
+    short *ptr_arr;
 
-    for(int i = 0; i < SECOND_ARRAY; ++i)
-        printf("%d ", array[i]);
+    ptr_arr = arr;
 
-    printf("\n");
-
-    for(int i = 0; sizeof(coords) / sizeof(coords[0]) > i; ++i)
-        printf("%d ", array[i]);
-
-    printf("\n");
-
-    for(int i = 0; sizeof(digits) / sizeof(digits[0]) > i; ++i)
-        printf("%d ", digits[i]);
-
+    size_t len_1 = sizeof(arr);
+    size_t len_2 = sizeof(ptr_arr);
+    
     return 0;
 }
