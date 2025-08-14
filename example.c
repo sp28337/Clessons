@@ -1,22 +1,27 @@
 #include <stdio.h>
 
-#define SIZE_ARRAY 10
-
+// selection sort
 int main(void)
 {
-    int arr[SIZE_ARRAY] = {2, 8, 3, 3, 7, 9, 1, 2};
-    int delete_index = 5;
+    int arr[] = {108, -3, 5, 0, -8, 1, 10, -22, 3, 18, -6, 9, -8};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int min;
 
-    for(int i = 0; i < SIZE_ARRAY; ++i)
-        printf("%d ", arr[i]);
-
-
-    printf("\n");
-    for(int i = delete_index; i < SIZE_ARRAY - 1; ++i)
-        arr[i] = arr[i + 1];
-
-
-    for(int i = 0; i < SIZE_ARRAY; ++i)
+    for(int i = 0; i < size - 1; ++i) {
+        int min_idx = i;
+        for(int j = i + 1; j < size; ++j) {
+            // if need DESC sort: arr[min_idx] < arr[j]
+            if (arr[min_idx] > arr[j]) {
+                min_idx = j;
+            }
+        }
+        if (min_idx != i) {
+            int temp = arr[i];
+            arr[i] = arr[min_idx];
+            arr[min_idx] = temp;
+        }
+    }
+    for(int i = 0; i < size; ++i)
         printf("%d ", arr[i]);
 
     return 0;
