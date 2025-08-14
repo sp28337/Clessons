@@ -1,24 +1,21 @@
 #include <stdio.h>
 
+#define SIZE_ARRAY 10
+
 int main(void)
 {
-    float array_1[20] = {0.1, -3.6, 12.8, -0.2, 0, 27.5};
-    float array_2[10];
+    int arr[SIZE_ARRAY] = {2, 8, 7};
+    int insert_index = 2;
 
-    int size_1 = sizeof(array_1) / sizeof(array_1[0]);
-    int size_2 = sizeof(array_2) / sizeof(array_2[0]);
-    int shorter_size = (size_1 > size_2) ? size_2 : size_1;
+    for(int i = SIZE_ARRAY - 1; i > insert_index; --i) {
+        arr[i] = arr[i - 1];
+        // printf("arr[%d] = arr[%d]\n", i, i - 1);
+    }
 
-    for(int i = 0; i < shorter_size; ++i)
-        printf("%.2f ", array_2[i]);
-    
-    printf("\n");
+    arr[insert_index] = 33;
 
-    for(int i = 0; i < shorter_size; ++i)
-        array_2[i] = array_1[i];
-
-    for(int i = 0; i < shorter_size; ++i)
-        printf("%.2f ", array_2[i]);
+    for(int i = 0; i < SIZE_ARRAY; ++i)
+        printf("%d ", arr[i]);
 
     return 0;
 }
