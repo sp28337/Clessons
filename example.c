@@ -2,13 +2,13 @@
 
 int main(void)
 {
-    char game_pole[3][3] = {{1, 2}, {3, 4}};
+    char game_pole[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    for(int i = 0; i < 3; ++i) {
-        for(int j = 0; j < 3; ++j)
-            printf("%d ", game_pole[i][j]);
-        printf("\n");
-    }
+    char *p_row = game_pole[1];
+    printf("%d", *(p_row - 2));
+
+    char (*p_ar)[3] = game_pole; // указатель на массив
+    char *ptr[3]; // массив указателей
 
     return 0;
 }
