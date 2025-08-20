@@ -2,17 +2,18 @@
 
 int main(void)
 {
-    char str[] = {'H', 'e', 'l', 'l', 'o', ' ', 'P', 'a', 't', 't', 'a', 'y', 'a', '\0'};
-    char s[] = "Pavel Nikolaevich";
-    char buffer[512] = "Hello, World!";
+    char source[100] = "Hello Pattaya!";
+    char destination[10];
 
-    char b[] = "Hell" "o,"
-    " World" "!";
-    char sp[] = "Hello, \
-World!";
-    
-    char string[] = "string";  // string literal ""
-    char symbol = 'a'; // character literal ''
+    const char *src = source;
+    char *dst = destination;
+    int max_len_copy = sizeof(destination);
+
+    while(*src != '\0' && max_len_copy-- > 1)
+        *dst++ = *src++;
+    *dst = '\0';
+
+    puts(destination);
 
     return 0;
 }
