@@ -2,13 +2,17 @@
 
 int main(void)
 {
-    char game_pole[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    char str[] = {'H', 'e', 'l', 'l', 'o', ' ', 'P', 'a', 't', 't', 'a', 'y', 'a', '\0'};
+    char s[] = "Pavel Nikolaevich";
+    char buffer[512] = "Hello, World!";
 
-    char *p_row = game_pole[1];
-    printf("%d", *(p_row - 2));
-
-    char (*p_ar)[3] = game_pole; // указатель на массив
-    char *ptr[3]; // массив указателей
+    char b[] = "Hell" "o,"
+    " World" "!";
+    char sp[] = "Hello, \
+World!";
+    
+    char string[] = "string";  // string literal ""
+    char symbol = 'a'; // character literal ''
 
     return 0;
 }
