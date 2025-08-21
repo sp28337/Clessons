@@ -2,18 +2,10 @@
 
 int main(void)
 {
-    char source[100] = "Hello Pattaya!";
-    char destination[10];
+    char list[10];
+    fgets(list, sizeof(list), stdin);
 
-    const char *src = source;
-    char *dst = destination;
-    int max_len_copy = sizeof(destination);
-
-    while(*src != '\0' && max_len_copy-- > 1)
-        *dst++ = *src++;
-    *dst = '\0';
-
-    puts(destination);
+    puts(list);
 
     return 0;
 }
