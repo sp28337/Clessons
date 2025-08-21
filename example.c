@@ -1,19 +1,17 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
-    char list[10];
+    char source[100] = "Hello World!!!";
+    char destination[10];
+    int max_len = sizeof(destination) - 1;
+
+    strncpy(destination, source, max_len);
+
+    destination[max_len] = '\0';
     
-    int max_len = sizeof(list), i = 0;
-    char *ptr = list, ch;
-
-    while((ch = getchar()) != '\n' && ch != EOF && i < max_len - 1)
-        ptr[i++] = ch;
-
-
-    list[i] = '\0';
-    
-    puts(list);
+    puts(destination);
 
     return 0;
 }
