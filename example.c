@@ -3,15 +3,26 @@
 
 int main(void)
 {
-    char source[100] = "Hello World!!!";
-    char destination[10];
-    int max_len = sizeof(destination) - 1;
+    char st1[20] = "Hello Pattaya!";
+    char st2[30] = "Hello Pattaya!";
 
-    strncpy(destination, source, max_len);
+    const char *str1 = st1;
+    const char *str2 = st2;
+    int i = 0;
 
-    destination[max_len] = '\0';
-    
-    puts(destination);
+    for(; str1[i] != '\0' && str2[i] != '\0'; ++i) {
+        if(str1[i] != str2[i]) {
+            puts("Streeng are not equal");
+            return 0;
+        }
+    }
+
+    if(str1[i] != str2[i]) {
+        puts("Streeng lengh are not equal");
+        return 0;
+    }
+
+    puts("Streeng are equal");
 
     return 0;
 }
