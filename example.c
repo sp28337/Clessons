@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 
-#define STR_FRAGMENT_TO_FIND "ra"
+#define SYMBOLS_TO_CHECK "!@#$^?&"
 
 int main(void)
 {
-    char str[] = "Abrakadabra";
-    char *ptr = strstr(str, STR_FRAGMENT_TO_FIND);
+    char pass[] = "asdgsfdgh";
+    char *ptr = strpbrk(pass, SYMBOLS_TO_CHECK);
 
-    printf("str = %p\nptr = %p\n", str, ptr);
+    printf("str = %p\nptr = %p\n", pass, ptr);
     if(ptr != NULL) {
         printf("*ptr = %s\n", ptr);
     } else {
-        printf("There are not '%s' in '%s'\n", STR_FRAGMENT_TO_FIND, str);
+        printf("There are not '%s' in '%s'\n", SYMBOLS_TO_CHECK, pass);
     }
 
     return 0;
