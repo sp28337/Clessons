@@ -3,14 +3,13 @@
 
 int main(void)
 {
-    char st1[20] = "Hello Pattaya!";
-    char st2[30] = "Hello Pattaya!";
+    const char *strings[] = {
+        "Hello Pattaya!", "BKK", "Chiang Mai", "Chiang Rai", "Waiting for you!"
+    };
 
-    if(strcmp(st1, st2) == 0) {
-        puts("Streengs are equal");
-    } else {
-        puts("Streengs are not equal");
-    }
+    for(int i = 0; i < sizeof(strings) / sizeof(*strings); ++i)
+        if(strncmp(strings[i], "Ch", 2) == 0)
+            puts(strings[i]);
 
     return 0;
 }
