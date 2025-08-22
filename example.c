@@ -1,20 +1,19 @@
 #include <stdio.h>
 #include <string.h>
 
-#define CHAR_TO_FIND 'a'
+#define STR_FRAGMENT_TO_FIND "ra"
 
 int main(void)
 {
     char str[] = "Abrakadabra";
-    char *ptr = strchr(str, CHAR_TO_FIND);
+    char *ptr = strstr(str, STR_FRAGMENT_TO_FIND);
 
     printf("str = %p\nptr = %p\n", str, ptr);
     if(ptr != NULL) {
-        printf("*ptr = %c\n", *ptr);
+        printf("*ptr = %s\n", ptr);
     } else {
-        printf("There are not \'%c\' in str\n", CHAR_TO_FIND);
+        printf("There are not '%s' in '%s'\n", STR_FRAGMENT_TO_FIND, str);
     }
-        
 
     return 0;
 }
