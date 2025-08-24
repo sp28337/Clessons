@@ -1,14 +1,25 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
 
 int main(void)
 {
-    char game_pole[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int a = atoi("-123");
+    long b = atol("123124125");
+    long long c = atoll("12421512312412515");
+    double d = atof("0.2136");
 
-    char *p_row = game_pole[1];
-    printf("%d", *(p_row - 2));
+    printf("\na = %d\nb = %ld\nc = %lld\nd = %.2f\n", a, b, c, d);
 
-    char (*p_ar)[3] = game_pole; // указатель на массив
-    char *ptr[3]; // массив указателей
+    // how it works when template is wrong:
+
+    int e = atoi("-1k23");
+    long f = atol("123sfas124125");
+    long long g = atoll("1242151231241251365174512548125");
+    double h = atof("f0.2136");
+
+    printf("\na = %d\nb = %ld\nc = %lld\nd = %.2f\n", e, f, g, h);
 
     return 0;
 }
