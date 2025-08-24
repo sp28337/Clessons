@@ -5,16 +5,12 @@
 
 int main(void)
 {
-    double width = 2.88, height = 3.45, depth = 0.5;
-    char name[] = "Chair";
-    const size_t size = strlen(name) + 100;
-    char* info = malloc(size);
-    const char template[] = "(%.3s: %.2f x %.2f x %.2f)";
+    int num = -123;
+    char string[10];
 
-    sprintf(info, template, name, width, height, depth);
-    puts(info);
+    sprintf(string, "%d", num);
 
-    free(info);
+    puts(string);
 
     return 0;
 }
