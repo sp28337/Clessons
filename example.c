@@ -1,19 +1,15 @@
 #include <stdio.h>
-#include <string.h>
-
-#define SYMBOLS_TO_CHECK "!@#$^?&"
 
 int main(void)
 {
-    char pass[] = "asdgsfdgh";
-    char *ptr = strpbrk(pass, SYMBOLS_TO_CHECK);
+    double width = 2.88, height = 3.45, depth = 0.5;
+    char name[] = "Chair";
+    char info[100];
+    
+    const char template[] = "(%.3s: %.2f x %.2f x %.2f)";
 
-    printf("str = %p\nptr = %p\n", pass, ptr);
-    if(ptr != NULL) {
-        printf("*ptr = %s\n", ptr);
-    } else {
-        printf("There are not '%s' in '%s'\n", SYMBOLS_TO_CHECK, pass);
-    }
+    sprintf(info, template, name, width, height, depth);
+    puts(info);
 
     return 0;
 }
