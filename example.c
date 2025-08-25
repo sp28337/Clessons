@@ -1,8 +1,16 @@
 #include <stdio.h>
-#include "func.h"
+
+
+void swap(int *a, int *b)
+{
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
 
 int main(void)
 {
-    printf("P = %.2f", per_sq(3, 4));
-    return 0;
+    int a = 5, b = 7;
+    swap(&a, &b);
+    printf("a = %d, b = %d\n", a, b);
 }
